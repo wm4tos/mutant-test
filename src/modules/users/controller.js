@@ -1,5 +1,6 @@
+const { httpCodes, getValue } = require('../../helpers');
+
 const { getUsers: getUsersService } = require('./service');
-const { httpCodes } = require('../../helpers');
 
 const getAllUsers = async (req, res) => {
   try {
@@ -22,7 +23,7 @@ const getUsersSorted = async (req, res) => {
   try {
     const users = await getUsersService();
 
-    const usersSorted = users.sort((a, b) => (a[key] > b[key] ? 1 : -1));
+    const usersSorted = users.sort((a, b) => (getValue(a, key) > getValue(b, key) ? 1 : -1));
 
     const response = {
       ...httpCodes(),
