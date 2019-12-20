@@ -27,7 +27,7 @@ Projeto criado para o teste técnico da [Mutant](https://mutantbr.com/).
     `docker-compose up`
 
 ## Documentação
-Todas as rotas e exemplos da API estão no [localhost:3000/swagger](localhost:3000/swagger).
+Todas as rotas e exemplos da API estão na rota [localhost:3000/swagger](localhost:3000/swagger).
 
 ## Tem alguma dúvida ou sugestão?
 Manda no [meu e-mail](mailto:wrickee@gmail.com)! xD
