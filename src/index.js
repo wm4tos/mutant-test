@@ -18,7 +18,7 @@ const options = {
     info: {
       title: 'Mutant API',
     },
-    host: 'localhost:3000',
+    host: 'localhost:8080',
     basePath: '/api',
     produces: [
       'application/json',

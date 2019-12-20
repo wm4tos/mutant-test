@@ -11,7 +11,7 @@ Projeto criado para o teste técnico da [Mutant](https://mutantbr.com/).
 1. Criar um arquivo .env com base no arquivo example.env
     ### Exemplo do arquivo
     ```
-    PORT=3000
+    PORT=8080
     NODE_ENV=development
     REDIS_EXPIRES=3600000
     REDIS_URL=redis://test_mutant_redis
@@ -27,7 +27,7 @@ Projeto criado para o teste técnico da [Mutant](https://mutantbr.com/).
     `docker-compose up`
 
 ## Documentação
-Todas as rotas e exemplos da API estão na rota [localhost:3000/swagger](localhost:3000/swagger).
+Todas as rotas e exemplos da API estão na rota [localhost:8080/swagger](localhost:8080/swagger).
 
 ## Tem alguma dúvida ou sugestão?
 Manda no [meu e-mail](mailto:wrickee@gmail.com)! xD
