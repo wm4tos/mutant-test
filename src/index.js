@@ -24,15 +24,6 @@ const options = {
       'application/json',
     ],
     schemes: ['http'],
-    securityDefinitions: {
-      JWT: {
-        type: 'apiKey',
-        in: 'header',
-        scheme: 'bearer',
-        name: 'Authorization',
-        description: '',
-      },
-    },
   },
   route: {
     url: '/swagger',
