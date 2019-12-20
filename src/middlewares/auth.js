@@ -1,4 +1,4 @@
-const { decode } = require('../helpers/jwt');
+const { jwt: { decode } } = require('../helpers');
 
 module.exports = async (req, res, next) => {
   try {
