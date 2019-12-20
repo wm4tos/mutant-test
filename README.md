@@ -20,7 +20,7 @@ Projeto criado para o teste técnico da [Mutant](https://mutantbr.com/).
     - `PORT`: Porta do servidor
     - `NODE_ENV`: Ambiente da aplicação
     - `REDIS_EXPIRES`: Tempo (em millisegundos) de expiração padrão do redis
-    - `REDIS_URL`: URL do redis (URL deve ser igual ao nome do container, no caso `redis://test_rankmyapp_redis`)
+    - `REDIS_URL`: URL do redis (URL deve ser igual ao nome do container, no caso `redis://test_mutant_redis`)
 
 2. Executar o projeto
 
