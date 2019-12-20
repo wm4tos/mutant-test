@@ -17,6 +17,8 @@ services:
       - ./:/app
     environment:
       NODE_ENV: development
+    env_file:
+      - .env
 
   redis:
     container_name: test_mutant_redis
