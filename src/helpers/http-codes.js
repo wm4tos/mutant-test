@@ -6,6 +6,6 @@ module.exports = (name, message) => (name
     message: message || httpCodes.getStatusText(httpCodes[name]),
   }
   : {
-    status: httpCodes.INTERNAL_SERVER_ERROR,
-    message: httpCodes.getStatusText(httpCodes.INTERNAL_SERVER_ERROR),
+    status: httpCodes.OK,
+    message: httpCodes.getStatusText(httpCodes.OK),
   });

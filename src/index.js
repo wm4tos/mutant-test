@@ -7,7 +7,7 @@ const expressSwagger = require('express-swagger-generator');
 const routes = require('./routes');
 const { PORT } = require('./config');
 const { errorHandler } = require('./middlewares');
-const errorHelper = require('./helpers/error');
+const { httpCodes: httpStatusHelper } = require('./helpers/');
 
 const { Router } = express;
 const app = express();
@@ -55,7 +55,7 @@ app.use('/api', routes(Router()));
 
 app.use((err, req, res, next) => errorHandler(err, req, res, next));
 
-app.use((_, res) => res.status(errorHelper('NOT_FOUND').status).json(errorHelper('NOT_FOUND')));
+app.use((_, res) => res.status(httpStatusHelper('NOT_FOUND').status).json(httpStatusHelper('NOT_FOUND')));
 
 const listen = () => server.listen(PORT, () => process.stdout.write(`Listening on port ${PORT}\n`));
 
