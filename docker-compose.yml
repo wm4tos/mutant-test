@@ -4,7 +4,7 @@ services:
 
   api:
     container_name: test_mutant_api
-    image: node:10
+    image: node:12
     networks:
       - redis_db
     ports:
