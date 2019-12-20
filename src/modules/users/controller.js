@@ -16,6 +16,26 @@ const getAllUsers = async (req, res) => {
   }
 };
 
+const getUsersSorted = async (req, res) => {
+  const { propToSort: key = 'name' } = req.query;
+
+  try {
+    const users = await getUsersService();
+
+    const usersSorted = users.sort((a, b) => (a[key] > b[key] ? 1 : -1));
+
+    const response = {
+      ...httpCodes(),
+      data: usersSorted,
+    };
+
+    res.status(response.status).json(response.data);
+  } catch (error) {
+    throw error;
+  }
+};
+
 module.exports = {
   getAllUsers,
+  getUsersSorted,
 };

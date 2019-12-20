@@ -1,6 +1,8 @@
 const { Router } = require('express');
 
-const { getAllUsers } = require('./controller');
+const { getAllUsers, getUsersSorted } = require('./controller');
+const contracts = require('./contracts');
+const { validator } = require('../../middlewares');
 
 module.exports = () => {
   const router = Router();
@@ -12,6 +14,15 @@ module.exports = () => {
    * @returns {User[]} 200 - An array with user data
    */
   router.get('/', getAllUsers);
+
+  /**
+   * Get all users sorted by key
+   * @route GET /user/sorted
+   * @group User - Operations about users.
+   * @param {string} propToSort.query
+   * @returns {User[]} 200 - An array with user data sorted
+   */
+  router.get('/sorted', validator(contracts.sorted, 'query'), getUsersSorted);
 
   return { router, endpoint: '/user' };
 };
