@@ -6,4 +6,9 @@ module.exports = {
       propToSort: Joi.string().allow('', null).empty(['', null]),
     },
   },
+  filtered: {
+    query: {
+      addressToSearch: Joi.string().allow('', null).empty(['', null]),
+    },
+  },
 };
