@@ -16,7 +16,7 @@ const server = http.createServer(app);
 const options = {
   swaggerDefinition: {
     info: {
-      title: 'Boilerplate API',
+      title: 'Mutant API',
     },
     host: 'localhost:3000',
     basePath: '/api',
