@@ -39,7 +39,7 @@ const options = {
     docs: '/api-docs.json',
   },
   basedir: __dirname, // app absolute path
-  files: ['./modules/**/routes.js'], // Path to the API handle folder
+  files: ['./modules/**/routes.js', './modules/**/types.js'], // Path to the API handle folder
 };
 
 expressSwagger(app)(options);
