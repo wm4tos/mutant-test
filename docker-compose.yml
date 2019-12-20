@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  api:
+    container_name: test_mutant_api
+    image: node:10
+    networks:
+      - redis_db
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run dev"
+    depends_on:
+      - redis
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      NODE_ENV: development
+
+  redis:
+    container_name: test_mutant_redis
+    image: redis
+    networks:
+      - redis_db
+    command: redis-server
+    expose:
+      - 6379
+
+networks:
+  redis_db:
