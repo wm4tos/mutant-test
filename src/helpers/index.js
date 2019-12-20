@@ -5,7 +5,6 @@ const jwt = require('./jwt');
 const loadRoutes = require('./load_routes');
 const mongoose = require('./mongoose');
 const number = require('./number');
-const seed = require('./seed');
 const string = require('./string');
 
 module.exports = {
@@ -16,6 +15,5 @@ module.exports = {
   loadRoutes,
   mongoose,
   number,
-  seed,
   string,
 };

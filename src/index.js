@@ -6,16 +6,12 @@ const expressSwagger = require('express-swagger-generator');
 
 const routes = require('./routes');
 const { PORT } = require('./config');
-const mongo = require('./mongo');
 const { errorHandler } = require('./middlewares');
 const errorHelper = require('./helpers/error');
-const seederHelper = require('./helpers/seed');
 
 const { Router } = express;
 const app = express();
 const server = http.createServer(app);
-
-const mongooseConnection = mongo();
 
 const options = {
   swaggerDefinition: {
@@ -63,15 +59,10 @@ app.use((_, res) => res.status(errorHelper('NOT_FOUND').status).json(errorHelper
 
 const listen = () => server.listen(PORT, () => process.stdout.write(`Listening on port ${PORT}\n`));
 
-const startServer = async () => {
-  await seederHelper();
+const startServer = () => {
   listen();
 };
 
-
-mongooseConnection
-  .on('error', console.error)
-  .on('disconnected', mongo)
-  .once('open', startServer);
+startServer();
 
 module.exports = app;
