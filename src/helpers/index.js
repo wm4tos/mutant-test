@@ -13,7 +13,7 @@ module.exports = {
   httpCodes,
   jwt,
   loadRoutes,
-  number,
-  string,
-  object,
+  ...number,
+  ...string,
+  ...object,
 };
