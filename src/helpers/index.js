@@ -5,6 +5,7 @@ const jwt = require('./jwt');
 const loadRoutes = require('./load_routes');
 const number = require('./number');
 const string = require('./string');
+const object = require('./object');
 
 module.exports = {
   axios,
@@ -14,4 +15,5 @@ module.exports = {
   loadRoutes,
   number,
   string,
+  object,
 };
